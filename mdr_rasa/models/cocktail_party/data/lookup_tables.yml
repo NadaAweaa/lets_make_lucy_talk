@@ -1,0 +1,28 @@
+- lookup: names
+  examples: |
+    - Henrik
+    - Patrick
+    - Erick
+    - Alex
+    - James
+    - John
+    - Robert
+    - Michael
+    - William
+    - Mary
+    - Patricia
+    - Linda
+    - Barbara
+    - Elizabeth
+    - Nada 
+    - Nazib
+    - khatina
+
+- lookup: orders
+  examples: |
+    - Coke 
+    - Beer
+    - Energy drink
+    - Juice
+    - Water
+    - Vodka
