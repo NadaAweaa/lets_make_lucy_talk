@@ -1,0 +1,95 @@
+version: "3.1"
+
+nlu:
+- intent: item_1
+  examples: |
+    - what is on the shelf
+    - shelf
+
+- intent: item_2
+  examples: |
+    - what is on the media cover
+    - media cover
+    - media
+    - cover
+
+
+    
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - [Henrik](name)
+    - Hey, my name is [Alex](name)
+    - Hi, I'm [Erick](name)
+    - I'm [Barbara](name)
+    - You can call me [Patricia](name)
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: bot_name
+  examples: |
+    - your name
+    - name
+
+- lookup: names
+  examples: |
+    - Henrik
+    - Patrick
+    - Erick
+    - Alex
+    - James
+    - John
+    - Robert
+    - Michael
+    - William
+    - Mary
+    - Patricia
+    - Linda
+    - Barbara
+    - Elizabeth
+    - Khatina
+    - Nada
+    - Nazib
+    - Santosh

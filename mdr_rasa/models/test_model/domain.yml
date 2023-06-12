@@ -1,0 +1,55 @@
+version: "3.1"
+
+intents:
+  - item_1
+  - item_2
+  - greet
+  - goodbye
+  - affirm
+  - deny
+
+
+lookups:
+  - names
+  
+entities:
+  - name
+
+
+
+slots:
+  name:
+    type: any
+    mappings:
+      - type: from_entity
+        entity: name
+        
+
+
+responses:
+  utter_greet:
+  - text: "Hey {name}! What do you want to know about?"
+
+  utter_ask:
+  - text: "Do you want to know about anything else?"
+
+  utter_ask_again:
+  - text: "what else you want to know about?"
+
+  utter_item_1_description:
+  - text: "There's a laptop, a notebook, a pen and a Pringle"
+
+  utter_item_2_description:
+  - text: "There's a picture of Charlize Theron"
+
+  utter_enjoy:
+  - text: "Enjoy your day"
+
+  utter_name:
+  - text: "My name is Lucy" 
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
