@@ -1,1 +1,13 @@
-# ss23-speech_gesture_comm
+# SS23 Speech and Gesture for Communication
+
+## Overview 
+
+## Prerequisites
+
+## Installations 
+
+## RASA for NLU 
+
+## MediaPipe for Hand Gesture
+
+## Head Gesture 
