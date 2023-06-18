@@ -11,6 +11,8 @@
 
 ### MediaPipe for Hand Gesture
 
+* [Environment Setup](https://github.com/HBRS-SDP/ss23-speech_gesture_comm/wiki/MediaPipe-for-Hand-Gesture)
+
 ### Head Gesture 
 
 ### Results 
