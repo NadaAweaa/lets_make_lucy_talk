@@ -1,15 +1,16 @@
-# SS23 Speech and Gesture for Communication
+## SS23 Speech and Gesture for Communication
 
-## Overview 
+### Overview 
 
-## Prerequisites
+### Prerequisites
 
-## Installations 
+### Installations 
+* [Necessary Installations](https://github.com/HBRS-SDP/ss23-speech_gesture_comm/wiki/Python,-venv,-RASA,-and-ROS-installation)
 
-## RASA for NLU 
+### RASA for NLU 
 
-## MediaPipe for Hand Gesture
+### MediaPipe for Hand Gesture
 
-## Head Gesture 
+### Head Gesture 
 
-## Results 
+### Results 
