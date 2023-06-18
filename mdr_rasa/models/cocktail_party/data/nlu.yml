@@ -34,6 +34,14 @@ nlu:
     - Could you bring me some [Vodka](order)?
     - Do you have an [Energy drink](order)?
 
+
+- intent: bring_from_place
+  examples: |
+    - [Kitchen](places) 
+    - I'd like to have a [Coke](order) from [Kitchen](places)
+    - Please bring me some [Juice](order) from [Dining Room](places)
+
+
 - intent: affirm
   examples: |
     - yes

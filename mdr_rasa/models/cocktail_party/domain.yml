@@ -4,19 +4,30 @@ intents:
   - greet
   - tell_name
   - tell_oder
+  - bring_from_place
   - affirm
   - deny
 
-lookups:
+entities:
+  - PERSON
+  - PRODUCT
+  - LOC
+  - GPE
   - names
   - orders
+  - places
+
+lookups:
+  - name
+  - order
+  - places
 
 responses:
   utter_greet:
   - text: "Hey! What is your name?"
 
   utter_tell_name:
-  - text: "Hello,[Alex](name) nice to meet you."
+  - text: "Hello,(name) nice to meet you."
 
   utter_ask_help:
   - text: "How can I help you?"

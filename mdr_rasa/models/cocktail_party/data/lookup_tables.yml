@@ -1,4 +1,4 @@
-- lookup: names
+- lookup: name
   examples: |
     - Henrik
     - Patrick
@@ -18,7 +18,7 @@
     - Nazib
     - khatina
 
-- lookup: orders
+- lookup: order
   examples: |
     - Coke 
     - Beer
@@ -26,3 +26,12 @@
     - Juice
     - Water
     - Vodka
+
+
+- lookup: places
+  examples: |
+    - Kitchen
+    - Dining Room
+    - Living Room
+    - Bed Room
+    - Garage
