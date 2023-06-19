@@ -33,6 +33,7 @@ nlu:
     - A [Water](order) please
     - Could you bring me some [Vodka](order)?
     - Do you have an [Energy drink](order)?
+    - can I get [coke](order)
 
 
 - intent: bring_from_place
