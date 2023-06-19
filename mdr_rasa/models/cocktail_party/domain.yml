@@ -3,7 +3,7 @@ version: "3.1"
 intents:
   - greet
   - tell_name
-  - tell_oder
+  - tell_order
   - bring_from_place
   - affirm
   - deny
