@@ -13,9 +13,7 @@ language: en
 
 pipeline: 
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
-# # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
-  #- name: WhitespaceTokenizer
   - name: SpacyNLP
     model: "en_core_web_md"
     case_sensitive: False
@@ -33,46 +31,14 @@ pipeline:
     min_ngram: 1
     max_ngram: 2
 
-##########################################################
-  # - name: LanguageModelFeaturizer
-  #   # Name of the language model to use
-  #   model_name: "bert"
-
-  # - name: LexicalSyntacticFeaturizer
-  #   "features": [
-  #     ["low", "title", "upper"],
-  #     ["BOS", "EOS", "low", "upper", "title", "digit"],
-  #     ["low", "title", "upper"],
-  #   ]
-  # - name: CountVectorsFeaturizer
-  # - name: CountVectorsFeaturizer
-
-  # - name: CRFEntityExtractor
-  # - name: RegexFeaturizer
-  # - name: RegexEntityExtractor
-  #   case_sensitive: False
-  #   use_lookup_tables: true
-  #   lookup_tables:
-  #     names: "models/cocktail_party/data/lookup_tables.yml"
-  #     orders: "models/cocktail_party/data/lookup_tables.yml"
-  #   use_regexes: True
-  #   use_word_boundaries: True
-  #   analyzer: char_wb
-  #     min_ngram:1
-  #     max_ngram:4
-############################################################################
-
   - name: DIETClassifier
     epochs: 100
-    constrain_similarities: true
+    constrain_similarities: false
+    
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
-    
-#     constrain_similarities: true
-#   - name: FallbackClassifier
-#     threshold: 0.3
-#     ambiguity_threshold: 0.1
+  
 
 
 
@@ -85,7 +51,7 @@ policies:
 
   - name: MemoizationPolicy
 
-  #- name: RulePolicy
+#   - name: RulePolicy
 #   - name: Unexp5ecTEDIntentPolicy
 #     max_history: 
 #     epochs: 100
