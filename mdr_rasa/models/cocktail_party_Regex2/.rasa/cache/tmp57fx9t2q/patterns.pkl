@@ -1,0 +1,6 @@
+[
+  {
+    "name": "name",
+    "pattern": "\\s{\"Alex\",\"Nada\"}"
+  }
+]

@@ -1,0 +1,37 @@
+- lookup: name
+  examples: |
+    - Henrik
+    - Patrick
+    - Erick
+    - Alex
+    - James
+    - John
+    - Robert
+    - Michael
+    - William
+    - Mary
+    - Patricia
+    - Linda
+    - Barbara
+    - Elizabeth
+    - Nada 
+    - Nazib
+    - khatina
+
+- lookup: order
+  examples: |
+    - Coke 
+    - Beer
+    - Energy drink
+    - Juice
+    - Water
+    - Vodka
+
+
+- lookup: places
+  examples: |
+    - Kitchen
+    - Dining Room
+    - Living Room
+    - Bed Room
+    - Garage

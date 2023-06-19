@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-name",
+      "2": "I-name",
+      "3": "L-name",
+      "4": "U-name",
+      "5": "B-order",
+      "6": "I-order",
+      "7": "L-order",
+      "8": "U-order",
+      "9": "B-places",
+      "10": "I-places",
+      "11": "L-places",
+      "12": "U-places",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-name": 1,
+      "I-name": 2,
+      "L-name": 3,
+      "U-name": 4,
+      "B-order": 5,
+      "I-order": 6,
+      "L-order": 7,
+      "U-order": 8,
+      "B-places": 9,
+      "I-places": 10,
+      "L-places": 11,
+      "U-places": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

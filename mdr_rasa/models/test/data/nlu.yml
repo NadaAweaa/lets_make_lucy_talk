@@ -17,47 +17,27 @@ nlu:
     - goodevening
     - good afternoon
 
-- intent: tell_name
+- intent: goodbye
   examples: |
-    - [Henrik](name)
-    - Hey, my name is [Alex](name)
-    - Hi, I'm [Erick](name)
-    - I'm [Barbara](name)
-    - You can call me [Patricia](name)
-
-- intent: tell_order
-  examples: |
-    - [Beer](order) 
-    - I'd like to have a [Coke](order)
-    - Please bring me some [Juice](order)
-    - A [Water](order) please
-    - Could you bring me some [Vodka](order)?
-    - Do you have an [Energy drink](order)?
-
-
-- intent: bring_from_place
-  examples: |
-    - [Kitchen](places) 
-    - I'd like to have a [Coke](order) from [Kitchen](places)
-    - Please bring me some [Juice](order) from [Dining Room](places)
-
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
 
 - intent: affirm
   examples: |
     - yes
-    - yep
-    - yeah
+    - y
     - indeed
-    - sure
+    - of course
+    - that sounds good
     - correct
-    - true
-    - great
-    - ok
-    - that's correct
-    - that's right
-    - yes, correct
-    - right, thank you
-    - sounds really good
 
 - intent: deny
   examples: |
@@ -68,4 +48,44 @@ nlu:
     - don't like that
     - no way
     - not really
-    - sorry, you misunderstood that
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

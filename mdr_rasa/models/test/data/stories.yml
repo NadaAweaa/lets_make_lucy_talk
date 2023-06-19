@@ -2,27 +2,29 @@ version: "3.1"
 
 stories:
 
-- story: Need Order
+- story: happy path
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: tell_name
-  - action: utter_tell_name
-  - action: utter_ask_help
-  - intent: tell_order
-  - action: utter_repeat_order
-  - action: utter_ask_new_order
-  - intent: affirm
-  - intent: tell_order
-  - action: utter_will_be_back
-  
+  - intent: mood_great
+  - action: utter_happy
 
-- story: Don't Need Order 
+- story: sad path 1
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: tell_name
-  - action: utter_tell_name
-  - action: utter_ask_help
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
   - intent: deny
-  - action: utter_call_back
+  - action: utter_goodbye
