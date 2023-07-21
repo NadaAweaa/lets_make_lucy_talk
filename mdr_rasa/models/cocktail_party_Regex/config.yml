@@ -46,7 +46,7 @@ pipeline:
   #     ["low", "title", "upper"],
   #   ]
 
-  - name: CRFEntityExtractor
+    #- name: CRFEntityExtractor
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
@@ -55,9 +55,9 @@ pipeline:
   - name: RegexEntityExtractor
     case_sensitive: False
     use_lookup_tables: true
-    # lookup_tables:
-    #   names: "models/cocktail_party/data/lookup_tables.yml"
-    #   orders: "models/cocktail_party/data/lookup_tables.yml"
+    #lookup_tables:
+    #    names: "models/cocktail_party_Regex/data/lookup_tables.yml"
+    #    orders: "models/cocktail_party_Regex/data/lookup_tables.yml"
     use_regexes: True
     use_word_boundaries: True
     analyzer: char_wb
