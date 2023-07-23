@@ -1,0 +1,51 @@
+version: "3.1"
+
+stories:
+
+- story: describe item 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: item_1
+  - action: utter_item_1_description
+  - action: utter_ask
+  - intent: deny
+  - action: utter_enjoy
+
+
+- story: describe item 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: item_2
+  - action: utter_item_2_description
+  - action: utter_ask
+  - intent: deny
+  - action: utter_enjoy
+
+- story: describe item 1 and 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: item_1
+  - action: utter_item_1_description
+  - action: utter_ask
+  - intent: affirm
+  - action: utter_ask_again
+  - intent: item_2
+  - action: utter_item_2_description
+  - action: utter_enjoy
+
+- story: describe item 2 and 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: item_2
+  - action: utter_item_2_description
+  - action: utter_ask
+  - intent: affirm
+  - action: utter_ask_again
+  - intent: item_1
+  - action: utter_item_1_description
+  - action: utter_enjoy
+
