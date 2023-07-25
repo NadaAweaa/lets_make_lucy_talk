@@ -1,4 +1,4 @@
-## SS23 Speech and Gesture for Communication
+## Lets Make Lucy Talk 
 
 ### Overview 
 
