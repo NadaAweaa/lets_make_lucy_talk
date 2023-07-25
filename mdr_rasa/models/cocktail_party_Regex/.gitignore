@@ -1,0 +1,9 @@
+.rasa/
+.rasa/cache/
+.vscode/
+*.dot
+*.pyc
+models/
+*.db
+.rasa/cache/cache.db
+actions/__pycache__/

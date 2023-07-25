@@ -41,6 +41,13 @@ nlu:
     - I'd like to have a [Coke](order) from [Kitchen](places)
     - Please bring me some [Juice](order) from [Dining Room](places)
 
+- intent: system_message
+  examples: |
+    - system: execute scenario 1
+    - system: execute scenario 2
+    - system: execute scenario 3
+    - system: execute scenario 4
+    - system: execute scenario 5
 
 - intent: affirm
   examples: |

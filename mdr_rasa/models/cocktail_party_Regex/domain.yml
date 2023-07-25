@@ -7,6 +7,7 @@ intents:
   - bring_from_place
   - affirm
   - deny
+  - system_message
 
 entities:
   - PERSON
@@ -16,6 +17,9 @@ entities:
   - name
   - order
   - places
+
+actions:
+  - action_deal_with_system_message
 
 lookups:
   - name

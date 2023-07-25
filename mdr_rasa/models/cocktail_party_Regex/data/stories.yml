@@ -26,3 +26,8 @@ stories:
   - action: utter_ask_help
   - intent: deny
   - action: utter_call_back
+
+- story: system messages
+  steps:
+  - intent: system_message
+  - action: action_deal_with_system_message
