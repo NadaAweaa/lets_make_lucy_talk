@@ -7,3 +7,4 @@
  *.db
  .rasa/cache/cache.db
  actions/__pycache__/
+mdr_rasa/models/cocktail_party_Regex/.rasa/cache/cache.db

@@ -31,3 +31,10 @@ stories:
   steps:
     - intent: system_scenario_one
     - action: utter_greet
+
+- story: Activate Order Form - denied
+  steps:
+    - intent: system_scenario_one
+    - action: utter_greet
+    - intent: deny
+    - action: utter_call_back

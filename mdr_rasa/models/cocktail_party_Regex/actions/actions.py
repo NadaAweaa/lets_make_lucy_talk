@@ -4,14 +4,26 @@
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
 
-
-# This is a simple example for a custom action which utters "Hello World!"
-
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
+
+class ActionCustomFallback(Action):
+    def name(self) -> Text:
+        return "action_custom_fallback"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Send a message to the user
+        dispatcher.utter_message(text="Sorry, I didn't understand that. Can you please rephrase your message?")
+
+        # Return an empty list
+        return []
 
 class ActionDealWithSystemMessage(Action):
 
@@ -38,3 +50,4 @@ class ActionClearSlot(Action):
     ) -> List[Dict[Text, Any]]:
         # add all the slots you wish to clear, here:
         return [SlotSet("order", None), SlotSet("places",None)]
+

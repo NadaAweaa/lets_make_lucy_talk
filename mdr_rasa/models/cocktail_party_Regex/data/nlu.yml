@@ -48,6 +48,8 @@ nlu:
     - Please bring me some [Juice](order) from [Dining Room](places)
     - I'd like to have a [Coke](order) from [Kitchen](places)
     - There should be a [Water](order) in the [Living Room](places)
+    - In the [Garage](places) I suppose there is some [Vodka](order)
+    - In the [Kitchen](places) there is some [Beer](order) can you get me that
 
 - intent: bring_from_place
   examples: |

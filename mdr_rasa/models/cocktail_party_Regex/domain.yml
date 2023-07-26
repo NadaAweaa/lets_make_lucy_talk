@@ -21,6 +21,7 @@ entities:
 actions:
   - action_deal_with_system_message
   - action_clear_slots
+  - action_custom_fallback
 
 lookups:
   - name
