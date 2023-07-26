@@ -7,7 +7,7 @@ intents:
   - bring_from_place
   - affirm
   - deny
-  - system_message
+  - system_scenario_one
 
 entities:
   - PERSON
@@ -20,15 +20,37 @@ entities:
 
 actions:
   - action_deal_with_system_message
+  - action_clear_slots
 
 lookups:
   - name
   - order
   - places
 
+forms:
+  simple_order_form:
+    required_slots:
+      - order
+      - places
+
+slots:
+  order:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: order
+
+  places:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: places
+
 responses:
   utter_greet:
-  - text: "Hey! What is your name?"
+  - text: "Hello! Sorry for the interruption, but can I get you anything?"
 
   utter_tell_name:
   - text: "Hello,(name) nice to meet you."
@@ -47,6 +69,22 @@ responses:
   
   utter_call_back:
   - text: "Okay! call my name if you need anything"
+
+  utter_ask_order:
+  - text: "What would you like to have?"
+  - text: "Would you like me to get you something?"
+
+  utter_ask_places:
+  - text: "From which location would you like to have it?"
+  - text: "Where can I find it?"
+
+  utter_submit:
+    - text: I will now make an order for you!
+  utter_order_slots:
+    - text: I will make an order for {order} at {places}.
+
+  utter_in_process:
+    - text: I am processing your order.
 
 session_config:
   session_expiration_time: 60

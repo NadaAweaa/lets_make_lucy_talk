@@ -17,6 +17,14 @@ nlu:
     - goodevening
     - good afternoon
 
+- intent: goodbye
+  examples: |
+    - goodbye
+    - bye
+    - goodbye for now
+    - ciao
+    - tchuss
+
 - intent: tell_name
   examples: |
     - [Henrik](name)
@@ -33,21 +41,37 @@ nlu:
     - A [Water](order) please
     - Could you bring me some [Vodka](order)?
     - Do you have an [Energy drink](order)?
-
+    - A cup of [Tea](order) please
+    - I'd like to have a cup of [Coffee](order)
+    - Could you bring me some [Vodka](order) from the [Bed Room](places)?
+    - I'd like to have a [Beer](order) from the [Kitchen](places)
+    - Please bring me some [Juice](order) from [Dining Room](places)
+    - I'd like to have a [Coke](order) from [Kitchen](places)
+    - There should be a [Water](order) in the [Living Room](places)
 
 - intent: bring_from_place
   examples: |
     - [Kitchen](places) 
-    - I'd like to have a [Coke](order) from [Kitchen](places)
-    - Please bring me some [Juice](order) from [Dining Room](places)
+    - [Dining Room](places)
+    - You would find it in the [Living Room](places)
+    - It should be in the [Bed Room](places)
+    - In the [Garage](places) I suppose
+    - I think it's in the [Kitchen](places)
+    - in the [Dining Room](places)
+    - It should be in the [Living Room](places)
+    
 
-- intent: system_message
+- intent: system_scenario_one
   examples: |
     - system: execute scenario 1
-    - system: execute scenario 2
-    - system: execute scenario 3
-    - system: execute scenario 4
-    - system: execute scenario 5
+    - system: execute scenario one
+    - system: execute_scenario_1
+    - system: execute_scenario_one,
+    - system: scenario 1
+    - system: scenario one
+    - system: scenario_1
+    - system: scenario_one
+    - system: scenario1
 
 - intent: affirm
   examples: |
@@ -105,6 +129,8 @@ nlu:
     - Juice
     - Water
     - Vodka
+    - Coffee
+    - Tea
 
 
 - lookup: places

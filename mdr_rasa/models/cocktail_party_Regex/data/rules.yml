@@ -4,6 +4,36 @@ rules:
 
 - rule: Say goodbye anytime the user says goodbye
   steps:
-  - intent: deny
+  - intent: goodbye
   - action: utter_call_back
 
+- rule: Activate Order Form
+  steps:
+    - intent: tell_order
+    - action: simple_order_form
+    - active_loop: simple_order_form
+
+- rule: Submit Order Form
+  condition:
+    - active_loop: simple_order_form
+  steps:
+    - action: simple_order_form
+    - active_loop: null
+    - action: utter_submit
+    - action: action_clear_slots
+
+- rule: Submit Order Form 2
+  condition:
+    - active_loop: simple_order_form
+  steps:
+    - or:
+      - intent: affirm
+      - intent: deny
+      - intent: greet
+      - intent: tell_name
+      - intent: affirm
+      - intent: deny
+      - intent: system_scenario_one
+    - action: utter_in_process
+    - action: simple_order_form
+    - active_loop: simple_order_form

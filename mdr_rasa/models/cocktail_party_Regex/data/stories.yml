@@ -2,32 +2,32 @@ version: "3.1"
 
 stories:
 
-- story: Need Order
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: tell_name
-  - action: utter_tell_name
-  - action: utter_ask_help
-  - intent: tell_order
-  - action: utter_repeat_order
-  - action: utter_ask_new_order
-  - intent: affirm
-  - intent: tell_order
-  - action: utter_will_be_back
+# - story: Need Order
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: tell_name
+#   - action: utter_tell_name
+#   - action: utter_ask_help
+#   - intent: tell_order
+#   - action: utter_repeat_order
+#   - action: utter_ask_new_order
+#   - intent: affirm
+#   - intent: tell_order
+#   - action: utter_will_be_back
   
 
-- story: Don't Need Order 
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: tell_name
-  - action: utter_tell_name
-  - action: utter_ask_help
-  - intent: deny
-  - action: utter_call_back
+# - story: Don't Need Order 
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: tell_name
+#   - action: utter_tell_name
+#   - action: utter_ask_help
+#   - intent: deny
+#   - action: utter_call_back
 
-- story: system messages
+- story: Activate Order Form
   steps:
-  - intent: system_message
-  - action: action_deal_with_system_message
+    - intent: system_scenario_one
+    - action: utter_greet

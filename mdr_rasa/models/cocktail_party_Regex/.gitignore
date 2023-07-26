@@ -7,3 +7,4 @@ models/
 *.db
 .rasa/cache/cache.db
 actions/__pycache__/
+story_graph.dot
