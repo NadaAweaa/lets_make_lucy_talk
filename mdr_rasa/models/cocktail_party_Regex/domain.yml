@@ -8,6 +8,7 @@ intents:
   - affirm
   - deny
   - system_scenario_one
+  - goodbye
 
 entities:
   - PERSON
