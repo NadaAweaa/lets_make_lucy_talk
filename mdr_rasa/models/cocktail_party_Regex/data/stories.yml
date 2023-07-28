@@ -2,39 +2,49 @@ version: "3.1"
 
 stories:
 
-# - story: Need Order
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: tell_name
-#   - action: utter_tell_name
-#   - action: utter_ask_help
-#   - intent: tell_order
-#   - action: utter_repeat_order
-#   - action: utter_ask_new_order
-#   - intent: affirm
-#   - intent: tell_order
-#   - action: utter_will_be_back
-  
-
-# - story: Don't Need Order 
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: tell_name
-#   - action: utter_tell_name
-#   - action: utter_ask_help
-#   - intent: deny
-#   - action: utter_call_back
+- story: Deal starting with deny
+  steps:
+    - intent: system_scenario_one
+    - action: utter_interruption_at_start
+    - intent: deny
+    - action: utter_call_if_you_need_anything
+    - active_loop: null
 
 - story: Activate Order Form
   steps:
     - intent: system_scenario_one
-    - action: utter_greet
+    - action: utter_interruption_at_start
+    - or: 
+      - intent: tell_order
+      - intent: affirm
+      - intent: greet
+    - action: simple_order_form
+    - active_loop: simple_order_form
 
-- story: Activate Order Form - denied
+- story: confirm order
   steps:
-    - intent: system_scenario_one
-    - action: utter_greet
-    - intent: deny
-    - action: utter_call_back
+  - checkpoint: verify_order_before_submit
+  - action: utter_verify_order
+  - intent: affirm
+  - action: utter_will_bring_order
+  - action: utter_will_be_back
+  - action: action_clear_slots
+
+- story: deny order
+  steps:
+  - checkpoint: verify_order_before_submit
+  - action: utter_verify_order
+  - intent: deny
+  - action: utter_sorry_for_inconvenience
+  - action: action_clear_slots
+  - action: simple_order_form
+  - active_loop: simple_order_form
+
+# - story: Activate Order Form with tell_order - 1
+#   steps:
+#     - intent: system_scenario_one
+#     - action: utter_interruption_at_start
+#     - intent: tell_order
+#     - action: simple_order_form
+#     - active_loop: simple_order_form
+

@@ -12,7 +12,7 @@ from rasa_sdk.events import SlotSet
 
 class ActionCustomFallback(Action):
     def name(self) -> Text:
-        return "action_custom_fallback"
+        return "action_fallback_response"
 
     def run(
         self,

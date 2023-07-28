@@ -51,7 +51,7 @@ nlu:
     - In the [Garage](places) I suppose there is some [Vodka](order)
     - In the [Kitchen](places) there is some [Beer](order) can you get me that
 
-- intent: bring_from_place
+- intent: tell_place
   examples: |
     - [Kitchen](places) 
     - [Dining Room](places)

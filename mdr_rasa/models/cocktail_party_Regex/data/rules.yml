@@ -5,13 +5,7 @@ rules:
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
-  - action: utter_call_back
-
-- rule: Activate Order Form
-  steps:
-    - intent: tell_order
-    - action: simple_order_form
-    - active_loop: simple_order_form
+  - action: utter_call_if_you_need_anything
 
 - rule: Submit Order Form
   condition:
@@ -19,21 +13,94 @@ rules:
   steps:
     - action: simple_order_form
     - active_loop: null
-    - action: utter_submit
-    - action: action_clear_slots
+    - checkpoint: verify_order_before_submit
 
-- rule: Submit Order Form 2
+- rule: deal with interruption - 1
   condition:
     - active_loop: simple_order_form
   steps:
-    - or:
-      - intent: affirm
-      - intent: deny
-      - intent: greet
-      - intent: tell_name
-      - intent: affirm
-      - intent: deny
-      - intent: system_scenario_one
-    - action: utter_in_process
+    - intent: greet
+    - action: utter_greet
     - action: simple_order_form
     - active_loop: simple_order_form
+
+# - rule: deal with interruption - 2
+#   condition:
+#     - active_loop: simple_order_form
+#   steps:
+#     - or:
+#       - intent: tell_place
+#       - intent: tell_order
+#     - action: simple_order_form
+#     - active_loop: simple_order_form
+
+- rule: deal with interruption - 3
+  condition:
+    - active_loop: simple_order_form
+  steps:
+    - intent: tell_name
+    - action: utter_greet_by_name
+    - action: simple_order_form
+    - active_loop: simple_order_form
+
+- rule: deal with interruption - 4
+  condition:
+    - active_loop: simple_order_form
+  steps:
+    - intent: nlu_fallback
+    - action: action_fallback_response
+    - action: simple_order_form
+    - active_loop: simple_order_form
+
+- rule: confirm order
+  steps:
+  - checkpoint: verify_order_before_submit
+  - action: utter_verify_order
+  - intent: affirm
+  - action: utter_will_bring_order
+  - action: utter_will_be_back
+  - action: action_clear_slots
+
+- rule: deny order
+  steps:
+  - checkpoint: verify_order_before_submit
+  - action: utter_verify_order
+  - intent: deny
+  - action: utter_sorry_for_inconvenience
+  - action: action_clear_slots
+  - action: simple_order_form
+  - active_loop: simple_order_form
+
+# - rule: say greet and then go loop
+#   condition:
+#     - active_loop: simple_order_form
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: simple_order_form
+#   - active_loop: simple_order_form
+
+# - rule: Activate Order Form
+#   steps:
+#     - intent: tell_order
+#     - action: simple_order_form
+#     - active_loop: simple_order_form
+
+# - rule: Submit Order Form
+#   condition:
+#     - active_loop: simple_order_form
+#   steps:
+#     - action: simple_order_form
+#     - active_loop: null
+#     - action: utter_will_bring_order
+#     - action: action_clear_slots
+
+# - rule: Submit Order Form 2
+#   condition:
+#     - active_loop: simple_order_form
+#   steps:
+#     - or:
+#       - intent: tell_name
+#     - action: utter_greet_by_name
+#     - action: simple_order_form
+#     - active_loop: simple_order_form

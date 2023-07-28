@@ -2,9 +2,10 @@ version: "3.1"
 
 intents:
   - greet
+  - goodbye
   - tell_name
   - tell_order
-  - bring_from_place
+  - tell_place
   - affirm
   - deny
   - system_scenario_one
@@ -21,7 +22,7 @@ entities:
 actions:
   - action_deal_with_system_message
   - action_clear_slots
-  - action_custom_fallback
+  - action_fallback_response
 
 lookups:
   - name
@@ -51,41 +52,40 @@ slots:
 
 responses:
   utter_greet:
+  - text: "Hello! I am a bot."
+
+  utter_interruption_at_start:
   - text: "Hello! Sorry for the interruption, but can I get you anything?"
 
-  utter_tell_name:
+  utter_greet_by_name:
   - text: "Hello,(name) nice to meet you."
 
-  utter_ask_help:
+  utter_ask_how_can_I_help:
   - text: "How can I help you?"
 
-  utter_repeat_order:
-  - text: "Let me make sure that I got it right. You want [Beer](order)"
-
-  utter_ask_new_order:
-  - text: "Do you want anything?"
-  
   utter_will_be_back:
   - text: "Okay! will be right back to you."
   
-  utter_call_back:
+  utter_call_if_you_need_anything:
   - text: "Okay! call my name if you need anything"
 
   utter_ask_order:
   - text: "What would you like to have?"
-  - text: "Would you like me to get you something?"
 
   utter_ask_places:
-  - text: "From which location would you like to have it?"
   - text: "Where can I find it?"
 
-  utter_submit:
-    - text: I will now make an order for you!
-  utter_order_slots:
-    - text: I will make an order for {order} at {places}.
+  utter_will_bring_order:
+    - text: I will now make an order for you! One {order} from {places}.
 
-  utter_in_process:
+  utter_processing_order:
     - text: I am processing your order.
+
+  utter_verify_order:
+    - text: "You ordered {order} from {places}. Is that correct?"
+
+  utter_sorry_for_inconvenience:
+    - text: "Sorry for the inconvenience."
 
 session_config:
   session_expiration_time: 60

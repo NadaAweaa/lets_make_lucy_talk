@@ -87,12 +87,12 @@ policies:
 # # If you'd like to customize them, uncomment and adjust the policies.
 # # See https://rasa.com/docs/rasa/policies for more information.
 
-  - name: MemoizationPolicy
+  - name: AugmentedMemoizationPolicy
   - name: RulePolicy
-    core_fallback_action_name: "action_custom_fallback"
-#   - name: Unexp5ecTEDIntentPolicy
-#     max_history: 
-#     epochs: 100
+    core_fallback_action_name: "action_fallback_response"
+  - name: UnexpecTEDIntentPolicy
+    max_history: 5
+    epochs: 100
   - name: TEDPolicy
     max_history: 5
     epochs: 100
