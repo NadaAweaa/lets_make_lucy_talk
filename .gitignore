@@ -1,10 +1,9 @@
 .rasa/
- .rasa/cache/
- .vscode/
- *.dot
- *.pyc
- models/
- *.db
- .rasa/cache/cache.db
- actions/__pycache__/
-mdr_rasa/models/cocktail_party_Regex/.rasa/cache/cache.db
+.rasa/cache/
+.vscode/
+*.dot
+*.pyc
+models/
+*.db
+.rasa/cache/cache.db
+actions/__pycache__/
