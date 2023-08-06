@@ -6,7 +6,8 @@
 
 from typing import Any, Text, Dict, List
 
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action, Tracker, FormValidationAction
+from rasa_sdk.types import DomainDict
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
@@ -35,7 +36,7 @@ class ActionDealWithSystemMessage(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         dispatcher.utter_message(text="Hello World!")
-
+        print(tracker.latest_message['entities'])
         return []
 
 class ActionClearSlot(Action):
@@ -49,5 +50,5 @@ class ActionClearSlot(Action):
         domain: Dict[Text, Any]
     ) -> List[Dict[Text, Any]]:
         # add all the slots you wish to clear, here:
-        return [SlotSet("order", None), SlotSet("places",None)]
-
+        # TODO: can also use return [AllSlotsReset()] if always clearing all slots. 
+        return [SlotSet("order", None), SlotSet("places",None), SlotSet("confirmation", None)]

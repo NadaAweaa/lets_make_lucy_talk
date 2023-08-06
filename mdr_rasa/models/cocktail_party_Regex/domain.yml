@@ -34,6 +34,7 @@ forms:
     required_slots:
       - order
       - places
+      - confirmation
 
 slots:
   order:
@@ -49,6 +50,16 @@ slots:
     mappings:
     - type: from_entity
       entity: places
+
+  confirmation:
+    type: bool
+    mappings:
+    - type: from_intent
+      intent: affirm
+      value: true
+      conditions:
+      - active_loop: simple_order_form
+        requested_slot: confirmation
 
 responses:
   utter_greet:
@@ -81,12 +92,14 @@ responses:
   utter_processing_order:
     - text: I am processing your order.
 
-  utter_verify_order:
-    - text: "You ordered {order} from {places}. Is that correct?"
-
   utter_sorry_for_inconvenience:
     - text: "Sorry for the inconvenience."
 
+  utter_ask_confirmation:
+    - text: "You ordered {order} from {places}. Is that correct?"
+
 session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: false
+
+#TODO:  can also use /session_start and /stop to control the session. Need to check if memory is saved. 

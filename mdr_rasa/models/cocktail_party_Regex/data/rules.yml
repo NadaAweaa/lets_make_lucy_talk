@@ -5,15 +5,7 @@ rules:
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
-  - action: utter_call_if_you_need_anything
-
-- rule: Submit Order Form
-  condition:
-    - active_loop: simple_order_form
-  steps:
-    - action: simple_order_form
-    - active_loop: null
-    - checkpoint: verify_order_before_submit
+  - action: action_deal_with_system_message
 
 - rule: deal with interruption - 1
   condition:
@@ -23,16 +15,6 @@ rules:
     - action: utter_greet
     - action: simple_order_form
     - active_loop: simple_order_form
-
-# - rule: deal with interruption - 2
-#   condition:
-#     - active_loop: simple_order_form
-#   steps:
-#     - or:
-#       - intent: tell_place
-#       - intent: tell_order
-#     - action: simple_order_form
-#     - active_loop: simple_order_form
 
 - rule: deal with interruption - 3
   condition:
@@ -52,55 +34,22 @@ rules:
     - action: simple_order_form
     - active_loop: simple_order_form
 
-- rule: confirm order
+- rule: deal with deny confirm order
+  condition:
+    - active_loop: simple_order_form
+    - slot_was_set:
+      - requested_slot: confirmation
   steps:
-  - checkpoint: verify_order_before_submit
-  - action: utter_verify_order
-  - intent: affirm
-  - action: utter_will_bring_order
-  - action: utter_will_be_back
-  - action: action_clear_slots
+    - intent: deny
+    - action: action_clear_slots
+    - action: simple_order_form
+    - active_loop: simple_order_form
 
-- rule: deny order
+- rule: Submit Order Form
+  condition:
+    - active_loop: simple_order_form
   steps:
-  - checkpoint: verify_order_before_submit
-  - action: utter_verify_order
-  - intent: deny
-  - action: utter_sorry_for_inconvenience
-  - action: action_clear_slots
-  - action: simple_order_form
-  - active_loop: simple_order_form
-
-# - rule: say greet and then go loop
-#   condition:
-#     - active_loop: simple_order_form
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - action: simple_order_form
-#   - active_loop: simple_order_form
-
-# - rule: Activate Order Form
-#   steps:
-#     - intent: tell_order
-#     - action: simple_order_form
-#     - active_loop: simple_order_form
-
-# - rule: Submit Order Form
-#   condition:
-#     - active_loop: simple_order_form
-#   steps:
-#     - action: simple_order_form
-#     - active_loop: null
-#     - action: utter_will_bring_order
-#     - action: action_clear_slots
-
-# - rule: Submit Order Form 2
-#   condition:
-#     - active_loop: simple_order_form
-#   steps:
-#     - or:
-#       - intent: tell_name
-#     - action: utter_greet_by_name
-#     - action: simple_order_form
-#     - active_loop: simple_order_form
+    - action: simple_order_form
+    - active_loop: null
+    - action: utter_will_bring_order
+    - action: action_clear_slots
