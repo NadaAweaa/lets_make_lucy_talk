@@ -1,7 +1,6 @@
 version: "3.1"
 
 stories:
-
 - story: Need Order
   steps:
   - intent: greet
@@ -11,13 +10,22 @@ stories:
   - action: utter_ask_help
   - intent: tell_order
   - action: utter_repeat_order
-  - action: utter_ask_new_order
   - intent: affirm
-  - intent: tell_order
+  - action: validate_request_order_form
+  - active_loop: request_order_form
+  - slot_was_set:
+    - requested_slot: object
+  - action: request_order_form
+  - active_loop: request_order_form
+  - slot_was_set:
+    - requested_slot: location
+  - slot_was_set:
+    - location: "Kitchen"
+  - action: validate_request_order_form
+  - active_loop: null
   - action: utter_will_be_back
-  
 
-- story: Don't Need Order 
+- story: Deny Order
   steps:
   - intent: greet
   - action: utter_greet

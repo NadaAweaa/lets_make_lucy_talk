@@ -98,6 +98,21 @@ nlu:
     - Juice
     - Water
     - Vodka
+    - Tea cup 
+    - Coffee
+    - Mug
+    - Spoon 
+    - plates
+    - cups
+    - bowls
+    - cutlery
+    - food 
+    - drink
+    - clothes
+    - glasses 
+    - shoes
+    
+    
 
 
 - lookup: places
@@ -107,3 +122,4 @@ nlu:
     - Living Room
     - Bed Room
     - Garage
+

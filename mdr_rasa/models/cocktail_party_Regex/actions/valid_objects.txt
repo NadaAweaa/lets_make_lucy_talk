@@ -1,0 +1,19 @@
+coke
+beer
+energy drink
+juice
+water
+vodka
+tea cup
+coffee
+mug
+spoon
+plates
+cups
+bowls
+cutlery
+food
+drink
+clothes
+glasses
+shoes

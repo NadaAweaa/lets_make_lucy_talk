@@ -9,10 +9,6 @@ intents:
   - deny
 
 entities:
-  - PERSON
-  - PRODUCT
-  - LOC
-  - GPE
   - name
   - order
   - places
@@ -24,25 +20,48 @@ lookups:
 
 responses:
   utter_greet:
-  - text: "Hey! What is your name?"
+  - text: "Hello, Hope you have a nice day. Do you want me to bring you somtthing"
+  - text: "Hello, would you like me to bring you anything."
 
   utter_tell_name:
-  - text: "Hello,(name) nice to meet you."
+  - text: "Hello, nice to meet you."
 
   utter_ask_help:
-  - text: "How can I help you?"
+  - text: "How can I assist you today?"
 
   utter_repeat_order:
-  - text: "Let me make sure that I got it right. You want [Beer](order)"
+  - text: "Let me make sure that I got it right. You want [Beer](order). Is that correct?"
 
   utter_ask_new_order:
   - text: "Do you want anything?"
   
   utter_will_be_back:
-  - text: "Okay! will be right back to you."
+  - text: "Alright! Feel free to ask if you need anything."
   
   utter_call_back:
-  - text: "Okay! call my name if you need anything"
+  - text: "Sure! Just call my name if you need assistance."
+
+solts: 
+  location:
+    type: list
+    mapping:
+    - type: from_entity
+      entity: places
+  
+  object:
+    type: list
+    mapping:
+    - type: from_entity
+      entity: order
+
+forms:
+  request_order_form:
+    required_slots:
+      - location
+      - object
+
+actions:
+  - actions.ActionAskFormSlots
 
 session_config:
   session_expiration_time: 60

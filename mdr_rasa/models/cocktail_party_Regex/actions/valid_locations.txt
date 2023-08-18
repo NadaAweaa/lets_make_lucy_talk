@@ -1,0 +1,5 @@
+kitchen
+dining room
+living room
+bed room
+garage
