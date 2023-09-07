@@ -50,6 +50,10 @@ nlu:
     - There should be a [Water](order) in the [Living Room](places)
     - In the [Garage](places) I suppose there is some [Vodka](order)
     - In the [Kitchen](places) there is some [Beer](order) can you get me that
+    - I'd like to have a cup of [Coffee](order) from the [Bed Room](places)
+    - I need [Pringles](order) from the [Kitchen](places)
+    - I want [Pringles](order)
+    - I need [Pringles](order) from the [Kitchen](places)
 
 - intent: tell_place
   examples: |
