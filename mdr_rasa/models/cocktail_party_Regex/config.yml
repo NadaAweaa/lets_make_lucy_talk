@@ -16,37 +16,6 @@ pipeline:
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
   - name: WhitespaceTokenizer
-  
-  # - name: SpacyNLP
-  #   model: "en_core_web_md"
-  #   case_sensitive: False
-
-  # - name: SpacyTokenizer
-  # - name: SpacyFeaturizer 
-  #   pooling: mean # Telling spaCy to generate word embeddings [https://rasa.com/blog/custom-spacy-components/]
-
-  # # refence link: https://rasa.com/docs/rasa/components/#spacyentityextractor 
-  # - name: SpacyEntityExtractor
-  #   dimensions: ["PERSON","PRODUCT","LOC","GPE"]
-
-  # - name: CountVectorsFeaturizer
-  #   analyzer: char_wb
-  #   min_ngram: 1
-  #   max_ngram: 2
-
-##########################################################
-  # - name: LanguageModelFeaturizer
-  #   # Name of the language model to use
-  #   model_name: "bert"
-
-  # - name: LexicalSyntacticFeaturizer
-  #   "features": [
-  #     ["low", "title", "upper"],
-  #     ["BOS", "EOS", "low", "upper", "title", "digit"],
-  #     ["low", "title", "upper"],
-  #   ]
-
-    #- name: CRFEntityExtractor
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
@@ -54,21 +23,8 @@ pipeline:
     analyzer: "char_wb"
     min_ngram: 1
     max_ngram: 4
-  - name: RegexEntityExtractor
-    case_sensitive: False
-    use_lookup_tables: true
-    #lookup_tables:
-    #    names: "models/cocktail_party_Regex/data/lookup_tables.yml"
-    #    orders: "models/cocktail_party_Regex/data/lookup_tables.yml"
-    use_regexes: True
-    use_word_boundaries: True
-    analyzer: char_wb
-      min_ngram:1
-      max_ngram:4
-############################################################################
-
   - name: DIETClassifier
-    epochs: 100
+    epochs: 300
     constrain_similarities: True
   - name: EntitySynonymMapper
   - name: ResponseSelector

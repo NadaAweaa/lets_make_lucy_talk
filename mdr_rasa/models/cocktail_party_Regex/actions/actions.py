@@ -21,22 +21,9 @@ class ActionCustomFallback(Action):
         tracker: Tracker,
         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # Send a message to the user
-        dispatcher.utter_message(text="Sorry, I didn't understand that. Can you please rephrase your message?")
+        dispatcher.utter_response("utter_fallback")
 
         # Return an empty list
-        return []
-
-class ActionDealWithSystemMessage(Action):
-
-    def name(self) -> Text:
-        return "action_deal_with_system_message"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        dispatcher.utter_message(text="Hello World!")
-        print(tracker.latest_message['entities'])
         return []
 
 class ActionClearSlot(Action):

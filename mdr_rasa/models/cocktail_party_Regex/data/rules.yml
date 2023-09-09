@@ -5,7 +5,7 @@ rules:
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
-  - action: action_deal_with_system_message
+  - action: utter_goodbye
 
 - rule: deal with interruption - 1
   condition:

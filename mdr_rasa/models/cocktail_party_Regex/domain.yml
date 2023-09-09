@@ -16,14 +16,8 @@ entities:
   - places
 
 actions:
-  - action_deal_with_system_message
   - action_clear_slots
   - action_fallback_response
-
-lookups:
-  - name
-  - order
-  - places
 
 forms:
   simple_order_form:
@@ -59,40 +53,89 @@ slots:
 
 responses:
   utter_greet:
-  - text: "Hello! I am a bot."
+  - custom: 
+      text: "conversation_ongoing"
+      data:
+        response: "Hello! I am a bot."
+
+  utter_goodbye:
+  - custom: 
+      text: "conversation_session_end"
+      data:
+        response: "Bye! Have a nice day."
 
   utter_interruption_at_start:
-  - text: "Hello! Sorry for the interruption, but can I get you anything?"
+  - custom: 
+      text: "conversation_ongoing"
+      data:
+        response: "Hello! I am a bot. Sorry for the interruption, but can I get you anything?"
 
   utter_greet_by_name:
-  - text: "Hello,(name) nice to meet you."
+  - custom: 
+      text: "conversation_ongoing"
+      data:
+        response: "Hello, {name}! I am a bot."
 
   utter_ask_how_can_I_help:
-  - text: "How can I help you?"
+  - custom: 
+      text: "conversation_ongoing"
+      data:
+        response: "How can I help you?"
 
   utter_will_be_back:
-  - text: "Okay! will be right back to you."
+  - custom: 
+      text: "conversation_ongoing"
+      data:
+        response: "Okay! will be right back to you."
   
   utter_call_if_you_need_anything:
-  - text: "Okay! call my name if you need anything"
+  - custom: 
+      text: "conversation_ongoing"
+      data:
+        response: "Okay! call my name if you need anything"
 
   utter_ask_order:
-  - text: "What would you like to have?"
+  - custom: 
+      text: "conversation_ongoing"
+      data:
+        response: "What would you like to have?"
 
   utter_ask_places:
-  - text: "Where can I find it?"
+  - custom: 
+      text: "conversation_ongoing"
+      data:
+        response: "Where can I find it?"
 
   utter_will_bring_order:
-    - text: I will now make an order for you! One {order} from {places}.
+    - custom:
+        text: "conversation_session_end"
+        data:
+          item: "{order}"
+          location: "{places}"
 
   utter_processing_order:
-    - text: I am processing your order.
+    - custom:
+        text: "conversation_ongoing"
+        data:
+          response: "I am processing your order."
 
   utter_sorry_for_inconvenience:
-    - text: "Sorry for the inconvenience."
+    - custom:
+        text: "conversation_ongoing"
+        data:
+          response: "Sorry for the inconvenience."
 
   utter_ask_confirmation:
-    - text: "You ordered {order} from {places}. Is that correct?"
+    - custom:
+        text: "conversation_ongoing"
+        data:
+          response: "You ordered {order} from {places}. Is that correct?"
+
+  utter_fallback:
+    - custom:
+        text: "conversation_ongoing"
+        data:
+          response: "Sorry, I didn't understand that. Can you please rephrase your message"
 
 session_config:
   session_expiration_time: 0
