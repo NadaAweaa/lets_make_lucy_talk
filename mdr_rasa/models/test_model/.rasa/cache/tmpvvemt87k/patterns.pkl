@@ -1,6 +1,0 @@
-[
-  {
-    "name": "name",
-    "pattern": "(\\bHenrik\\b|\\bPatrick\\b|\\bErick\\b|\\bAlex\\b|\\bJames\\b|\\bJohn\\b|\\bRobert\\b|\\bMichael\\b|\\bWilliam\\b|\\bMary\\b|\\bPatricia\\b|\\bLinda\\b|\\bBarbara\\b|\\bElizabeth\\b|\\bKhatina\\b|\\bNada\\b|\\bNazib\\b|\\bSantosh\\b)"
-  }
-]
