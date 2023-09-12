@@ -18,6 +18,7 @@ entities:
 actions:
   - action_clear_slots
   - action_fallback_response
+  - validate_simple_order_form
 
 forms:
   simple_order_form:
@@ -110,7 +111,7 @@ responses:
     - custom:
         text: "conversation_session_end"
         data:
-          item: "{order}"
+          object: "{order}"
           location: "{places}"
 
   utter_processing_order:
@@ -136,6 +137,18 @@ responses:
         text: "conversation_ongoing"
         data:
           response: "Sorry, I didn't understand that. Can you please rephrase your message"
+
+  utter_ask_order_again:
+    - custom:
+        text: "conversation_ongoing"
+        data:
+          response: "Sorry but I cannot recognize that object. Can you name anything else you would like to have?"
+
+  utter_ask_places_again:
+    - custom:
+        text: "conversation_ongoing"
+        data:
+          response: "Sorry but I cannot recognize that place. Can you name any other place where I can find it?"
 
 session_config:
   session_expiration_time: 0

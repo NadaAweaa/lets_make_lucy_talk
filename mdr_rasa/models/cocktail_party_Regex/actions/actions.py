@@ -18,10 +18,10 @@ class ValidateSimpleOrderForm(FormValidationAction):
         return "validate_simple_order_form"
 
     def __init__(self) -> None:
-        self.valid_locations = ["living room", "kitchen", "dining room","hall"]
-        self.valid_objects = ["pringles","windex bottle","soup can","shirt","spatula"]
+        self.valid_locations = ["living_room", "kitchen_counter", "dining_table","hall", "shelf"]
+        self.valid_objects = ["pringles","windex_bottle","soup","shirt","spatula"]
 
-    def validate_location(
+    def validate_places(
         self,
         value: Text,
         dispatcher: CollectingDispatcher,
@@ -29,11 +29,12 @@ class ValidateSimpleOrderForm(FormValidationAction):
         domain: DomainDict,
     ) -> Dict[Text, Any]:
         if value.lower() not in self.valid_locations:
-            dispatcher.utter_message("Sorry, I don't recognize that location.")
-            return {"location": None}
-        return {"location": value}
+            # dispatcher.utter_message("Sorry, I don't recognize that location.")
+            dispatcher.utter_template("utter_ask_places_again", tracker)
+            return {"places": None}
+        return {"places": value}
 
-    def validate_object(
+    def validate_order(
         self,
         value: Text,
         dispatcher: CollectingDispatcher,
@@ -41,9 +42,10 @@ class ValidateSimpleOrderForm(FormValidationAction):
         domain: DomainDict,
     ) -> Dict[Text, Any]:
         if value.lower() not in self.valid_objects:
-            dispatcher.utter_message("Sorry, I don't recognize that object.")
-            return {"object": None}
-        return {"object": value}
+            # dispatcher.utter_message("Sorry, I don't recognize that object.")
+            dispatcher.utter_template("utter_ask_order_again", tracker)
+            return {"order": None}
+        return {"order": value}
 
 class ActionCustomFallback(Action):
     def name(self) -> Text:

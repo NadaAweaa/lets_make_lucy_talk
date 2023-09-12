@@ -49,11 +49,11 @@ nlu:
     - I'd like to have a [Coke](order) from [Kitchen](places)
     - There should be a [Water](order) in the [Living Room](places)
     - In the [Garage](places) I suppose there is some [Vodka](order)
-    - In the [Kitchen](places) there is some [Beer](order) can you get me that
+    - In the [Kitchen](places) there is a [spatula](order) can you get me that
     - I'd like to have a cup of [Coffee](order) from the [Bed Room](places)
     - I need [Pringles](order) from the [Kitchen](places)
-    - I want [Pringles](order)
-    - I need [Pringles](order) from the [Kitchen](places)
+    - I want [windex](order)
+    - I need [windex bottle](order) from the [Kitchen](places)
     - can you get me some [potato chips](order) from the [Kitchen](places)
     - I need the [Pringles can](order) from the [Kitchen](places)
     - Can you bring me a [soda](order) from the [fridge](places)? 
@@ -66,7 +66,7 @@ nlu:
     - Bring me a [glass of wine](order) from the [wine rack](places) downstairs. 
     - I think there are some [cookies](order) in the [cookie jar](places) in the kitchen.
     - Can you bring me a [soda](order) from the [downstairs fridge](places)?
-    - Grab me a [beer](order) from the [garage](places).
+    - Grab me a [shirt](order) from the [shelf](places).
     - Get me some [chips and salsa](order) from the [pantry](places).
     - I'd like a glass of [Water](order) from [Living Room](places), please.
     - Can you fetch me a plate of [Pasta](order) from [Italian restaurant](places)?
@@ -74,9 +74,11 @@ nlu:
     - Fetch me a bowl of [Soup](order) from [Snack bar](places).
     - I'd love some [Milk](order) from [Fridge](places). 
     - Get me a [soup](order) from [kitchen](places), please.
-    - Please pick up some [pringles](order) from [kitchen](places).
+    - Please pick up some [campbell](order) from [kitchen](places).
     - could you grab me some [pringles](order) from [kitchen](places)?
-
+    - can you get me the [spatula](order) from [kitchen](places)?
+    - how about a [can of soup](order) from the [supermarket](places)?
+    - could you go to the [kitchen](places) and get me the [black t shirt](order)
 
 - intent: tell_place
   examples: |
@@ -88,7 +90,7 @@ nlu:
     - I think it's in the [Kitchen](places)
     - in the [Dining Room](places)
     - It should be in the [Living Room](places)
-    - I usually keep it in the [kitchen](places)
+    - I usually keep it in the [shelf](places)
     - It is in the [kitchen](places)
     - you can see it in the [kitchen](places)
     - maybe it is on the [shelf]](places)
@@ -96,7 +98,7 @@ nlu:
     - quite sure it is in the [dining room](places)
     - definitely on the top of [cabinet](places)
     - I think it is on the [table](places)
-    - quite sure it is on the [wall](places)
+    - quite sure it is on the [cupboard](places)
     - definitely on the top of [table](places)
     - from the [living area](places)
     - from the [dining hall](places)
@@ -233,6 +235,8 @@ nlu:
     - dinner-table
     - dinner-table
     - table
+    - dining room
+    - diningroom
 
 - synonym: kitchen_counter
   examples: |
