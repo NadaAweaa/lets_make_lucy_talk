@@ -219,14 +219,17 @@ nlu:
     - cooking spoon
     - cooking ladle
 
-- synonym: living_room
+- synonym: living_shelf
   examples: |
     - living room
     - livingroom
     - living-room
-    - reading room
+    - living area
+    - living room shelf
+    - living room cabinet
+    - living room cupboard
 
-- synonym: dining_table
+- synonym: dining_room
   examples: |
     - dining table
     - diningtable
@@ -237,18 +240,17 @@ nlu:
     - table
     - dining room
     - diningroom
+    - dining-room
 
-- synonym: kitchen_counter
+- synonym: reading_room
   examples: |
-    - kitchen
-    - kitchen room
-    - kitchen-room
-    - kitchenroom
-    - kitchen area
-    - kitchen space
-    - kitchen counter
-    - kitchen counter top
-    - counter
+    - reading room
+    - readingroom
+    - reading-room
+    - reading area
+    - reading room shelf
+    - reading room cabinet
+    - reading room cupboard
 
 - synonym: shelf
   examples: |

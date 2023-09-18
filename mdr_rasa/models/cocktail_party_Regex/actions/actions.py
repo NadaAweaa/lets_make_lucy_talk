@@ -57,7 +57,7 @@ class ActionCustomFallback(Action):
         tracker: Tracker,
         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # Send a message to the user
-        dispatcher.utter_response("utter_fallback")
+        dispatcher.utter_template("utter_fallback")
 
         # Return an empty list
         return []
