@@ -18,7 +18,7 @@ class ValidateSimpleOrderForm(FormValidationAction):
         return "validate_simple_order_form"
 
     def __init__(self) -> None:
-        self.valid_locations = ["living_room", "kitchen_counter", "dining_table","hall", "shelf"]
+        self.valid_locations = ["living_shelf", "dining_room","reading_room"]
         self.valid_objects = ["pringles","windex_bottle","soup","shirt","spatula"]
 
     def validate_places(

@@ -32,7 +32,12 @@ nlu:
     - Hi, I'm [Erick](name)
     - I'm [Barbara](name)
     - You can call me [Patricia](name)
-
+    - Hello Lucy, I am [John](name)
+    - I'm [John](name)
+    - I'm [John](name) and I want a [soup](order)
+    - I am [Dick](name) and I need a [shirt](order) from [reading room](places)
+    - Hey there. Im [Vivek](name). 
+    
 - intent: tell_order
   examples: |
     - [Beer](order) 
@@ -43,7 +48,7 @@ nlu:
     - Do you have an [Energy drink](order)?
     - A cup of [Tea](order) please
     - I'd like to have a cup of [Coffee](order)
-    - Could you bring me some [Vodka](order) from the [Bed Room](places)?
+    - Could you bring me some [Vodka](order) from the [living room shelf](places)?
     - I'd like to have a [Beer](order) from the [Kitchen](places)
     - Please bring me some [Juice](order) from [Dining Room](places)
     - I'd like to have a [Coke](order) from [Kitchen](places)
@@ -51,7 +56,7 @@ nlu:
     - In the [Garage](places) I suppose there is some [Vodka](order)
     - In the [Kitchen](places) there is a [spatula](order) can you get me that
     - I'd like to have a cup of [Coffee](order) from the [Bed Room](places)
-    - I need [Pringles](order) from the [Kitchen](places)
+    - I need [Pringles](order) from the [dining room](places)
     - I want [windex](order)
     - I need [windex bottle](order) from the [Kitchen](places)
     - can you get me some [potato chips](order) from the [Kitchen](places)
@@ -59,26 +64,26 @@ nlu:
     - Can you bring me a [soda](order) from the [fridge](places)? 
     - I'd like some [pizza](order) from the [kitchen counter](places).
     - Is there any [milk](order) in the [pantry](places)?
-    - Please grab me a [beer](order) from the [garage fridge](places].  
-    - Could I get a [sandwich](order) from the [picnic basket](places) outside?
+    - Please grab me a [beer](order) from the [dining table](places].  
+    - Could I get a [sandwich](order) from the [reading room](places) outside?
     - Do we have any [apples](order) in the [fruit bowl](places) on the table?
     - I'm hungry for some [chips and guacamole](order) - check the [snack cabinet](places).
-    - Bring me a [glass of wine](order) from the [wine rack](places) downstairs. 
+    - Bring me a [glass of wine](order) from the [living room cabinet](places) downstairs. 
     - I think there are some [cookies](order) in the [cookie jar](places) in the kitchen.
     - Can you bring me a [soda](order) from the [downstairs fridge](places)?
     - Grab me a [shirt](order) from the [shelf](places).
     - Get me some [chips and salsa](order) from the [pantry](places).
     - I'd like a glass of [Water](order) from [Living Room](places), please.
     - Can you fetch me a plate of [Pasta](order) from [Italian restaurant](places)?
-    - I'm craving some [Sushi](order) from [Sushi bar](places). Can you get it for me?
+    - I'm craving some [Sushi](order) from [dining room](places). Can you get it for me?
     - Fetch me a bowl of [Soup](order) from [Snack bar](places).
     - I'd love some [Milk](order) from [Fridge](places). 
     - Get me a [soup](order) from [kitchen](places), please.
     - Please pick up some [campbell](order) from [kitchen](places).
-    - could you grab me some [pringles](order) from [kitchen](places)?
+    - could you grab me some [pringles](order) from [reading room](places)?
     - can you get me the [spatula](order) from [kitchen](places)?
     - how about a [can of soup](order) from the [supermarket](places)?
-    - could you go to the [kitchen](places) and get me the [black t shirt](order)
+    - could you go to the [living room](places) and get me the [black t shirt](order)
 
 - intent: tell_place
   examples: |
@@ -92,7 +97,7 @@ nlu:
     - It should be in the [Living Room](places)
     - I usually keep it in the [shelf](places)
     - It is in the [kitchen](places)
-    - you can see it in the [kitchen](places)
+    - you can see it in the [reading room](places)
     - maybe it is on the [shelf]](places)
     - I think it is on the [shelf](places)
     - quite sure it is in the [dining room](places)
@@ -101,13 +106,15 @@ nlu:
     - quite sure it is on the [cupboard](places)
     - definitely on the top of [table](places)
     - from the [living area](places)
-    - from the [dining hall](places)
+    - from the [dining table](places)
     - it should be in the [hallway](places)
     - probably in the [restroom](places)
     - I think it is in the [bedroom](places)
     - can you check the [cupboard](places)
     - did you check the [chair](places)
-    - it might be in the [garage](places)
+    - it might be in the [reading room](places)
+    - I think it is in the [living room](places)
+    - quite sure it is in the [diningroom](places)
     
 
 - intent: system_scenario_one

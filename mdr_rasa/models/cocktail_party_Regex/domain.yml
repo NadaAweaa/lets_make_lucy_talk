@@ -28,6 +28,12 @@ forms:
       - confirmation
 
 slots:
+  name:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: name
   order:
     type: text
     influence_conversation: true
@@ -57,7 +63,7 @@ responses:
   - custom: 
       text: "conversation_ongoing"
       data:
-        response: "Hello! I am a bot."
+        response: "Hello! I am a Lucy, here to serve you."
 
   utter_goodbye:
   - custom: 
@@ -69,25 +75,13 @@ responses:
   - custom: 
       text: "conversation_ongoing"
       data:
-        response: "Hello! I am a bot. Sorry for the interruption, but can I get you anything?"
+        response: "Hello! I am Lucy. Sorry for the interruption, but can I get you anything?"
 
   utter_greet_by_name:
   - custom: 
       text: "conversation_ongoing"
       data:
         response: "Hello, {name}! I am a bot."
-
-  utter_ask_how_can_I_help:
-  - custom: 
-      text: "conversation_ongoing"
-      data:
-        response: "How can I help you?"
-
-  utter_will_be_back:
-  - custom: 
-      text: "conversation_ongoing"
-      data:
-        response: "Okay! will be right back to you."
   
   utter_call_if_you_need_anything:
   - custom: 
@@ -99,13 +93,13 @@ responses:
   - custom: 
       text: "conversation_ongoing"
       data:
-        response: "What would you like to have?"
+        response: "What would you like to have? Give me the name of the object and the place where I can find it."
 
   utter_ask_places:
   - custom: 
       text: "conversation_ongoing"
       data:
-        response: "Where can I find it?"
+        response: "Where can I find the {order}?"
 
   utter_will_bring_order:
     - custom:
