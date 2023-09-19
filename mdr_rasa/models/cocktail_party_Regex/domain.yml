@@ -53,7 +53,6 @@ slots:
 
   confirmation:
     type: bool
-    initial_value: false
     mappings:
     - type: from_intent
       intent: affirm
