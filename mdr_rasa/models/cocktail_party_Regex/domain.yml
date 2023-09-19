@@ -30,12 +30,14 @@ forms:
 slots:
   name:
     type: text
+    initial_value: "None"
     influence_conversation: false
     mappings:
     - type: from_entity
       entity: name
   order:
     type: text
+    initial_value: "None"
     influence_conversation: true
     mappings:
     - type: from_entity
@@ -43,6 +45,7 @@ slots:
 
   places:
     type: text
+    initial_value: "None"
     influence_conversation: true
     mappings:
     - type: from_entity
@@ -50,6 +53,7 @@ slots:
 
   confirmation:
     type: bool
+    initial_value: false
     mappings:
     - type: from_intent
       intent: affirm
@@ -64,85 +68,126 @@ responses:
       text: "conversation_ongoing"
       data:
         response: "Hello! I am a Lucy, here to serve you."
+        object: "{order}"
+        location: "{places}"
+        confirmation: "{confirmation}"
 
   utter_goodbye:
   - custom: 
       text: "conversation_session_end"
       data:
         response: "Bye! Have a nice day."
+        object: "{order}"
+        location: "{places}"
+        confirmation: "{confirmation}"
 
   utter_interruption_at_start:
   - custom: 
       text: "conversation_ongoing"
       data:
         response: "Hello! I am Lucy. Sorry for the interruption, but can I get you anything?"
+        object: "{order}"
+        location: "{places}"
+        confirmation: "{confirmation}"
 
   utter_greet_by_name:
   - custom: 
       text: "conversation_ongoing"
       data:
         response: "Hello, {name}! I am a bot."
+        object: "{order}"
+        location: "{places}"
+        confirmation: "{confirmation}"
   
   utter_call_if_you_need_anything:
   - custom: 
       text: "conversation_ongoing"
       data:
         response: "Okay! call my name if you need anything"
+        object: "{order}"
+        location: "{places}"
+        confirmation: "{confirmation}"
 
   utter_ask_order:
   - custom: 
       text: "conversation_ongoing"
       data:
         response: "What would you like to have? Give me the name of the object and the place where I can find it."
+        object: "{order}"
+        location: "{places}"
+        confirmation: "{confirmation}"
 
   utter_ask_places:
   - custom: 
       text: "conversation_ongoing"
       data:
         response: "Where can I find the {order}?"
+        object: "{order}"
+        location: "{places}"
+        confirmation: "{confirmation}"
 
   utter_will_bring_order:
     - custom:
         text: "conversation_session_end"
         data:
+          response: "Okay! I will bring you {order} from {places}."
           object: "{order}"
           location: "{places}"
+          confirmation: "{confirmation}"
 
   utter_processing_order:
     - custom:
         text: "conversation_ongoing"
         data:
           response: "I am processing your order."
+          object: "{order}"
+          location: "{places}"
+          confirmation: "{confirmation}"
 
   utter_sorry_for_inconvenience:
     - custom:
         text: "conversation_ongoing"
         data:
           response: "Sorry for the inconvenience."
+          object: "{order}"
+          location: "{places}"
+          confirmation: "{confirmation}"
 
   utter_ask_confirmation:
     - custom:
         text: "conversation_ongoing"
         data:
           response: "You ordered {order} from {places}. Is that correct?"
+          object: "{order}"
+          location: "{places}"
+          confirmation: "{confirmation}"
 
   utter_fallback:
     - custom:
         text: "conversation_ongoing"
         data:
           response: "Sorry, I didn't understand that. Can you please rephrase your message"
+          object: "{order}"
+          location: "{places}"
+          confirmation: "{confirmation}"
 
   utter_ask_order_again:
     - custom:
         text: "conversation_ongoing"
         data:
           response: "Sorry but I cannot recognize that object. Can you name anything else you would like to have?"
+          object: "{order}"
+          location: "{places}"
+          confirmation: "{confirmation}"
 
   utter_ask_places_again:
     - custom:
         text: "conversation_ongoing"
         data:
           response: "Sorry but I cannot recognize that place. Can you name any other place where I can find it?"
+          object: "{order}"
+          location: "{places}"
+          confirmation: "{confirmation}"
 
 session_config:
   session_expiration_time: 0
