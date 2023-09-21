@@ -194,7 +194,7 @@ nlu:
     - tomato soup can
     - can of soup
 
-- synonym: shirt
+- synonym: tshirt
   examples: |
     - shirt
     - t-shirt
@@ -235,6 +235,8 @@ nlu:
     - living room shelf
     - living room cabinet
     - living room cupboard
+    - living shelf
+    - living cabinet
 
 - synonym: dining_room
   examples: |
@@ -258,6 +260,7 @@ nlu:
     - reading room shelf
     - reading room cabinet
     - reading room cupboard
+    - reading 
 
 - synonym: shelf
   examples: |

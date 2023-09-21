@@ -53,3 +53,4 @@ rules:
     - active_loop: null
     - action: utter_will_bring_order
     - action: action_clear_slots
+    - action: action_restart
